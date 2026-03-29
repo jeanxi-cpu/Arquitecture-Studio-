@@ -34,22 +34,20 @@
     }
 
     .nav-container {
-        max-width: 80rem;
+        max-width: 100%;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 80px;
+        padding: 0 2rem;
     }
 
     .logo {
         font-size: 1.5rem;
         font-weight: 900;
         letter-spacing: 0.1em;
-        background: linear-gradient(to right, #000, #1a1a1a);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: black;
     }
 
     .nav-menu {
@@ -108,65 +106,28 @@
 
     /* Hero Section */
     .hero {
-        padding: 10rem 1rem 8rem;
         position: relative;
         overflow: hidden;
-        min-height: 100vh;
+        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
+        background-image: url('https://images.pexels.com/photos/3645517/pexels-photo-3645517.jpeg?auto=compress&cs=tinysrgb&w=1600');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
     }
 
-    .hero-bg {
+    .hero::before {
+        content: '';
         position: absolute;
         inset: 0;
-        opacity: 0.15;
-        pointer-events: none;
-    }
-
-    .hero-blob {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(60px);
-    }
-
-    .hero-blob-1 {
-        width: 384px;
-        height: 384px;
-        background: linear-gradient(to bottom right, #d1d5db, transparent);
-        left: 10%;
-        top: 20%;
-    }
-
-    .hero-blob-2 {
-        width: 384px;
-        height: 384px;
-        background: linear-gradient(to bottom right, #9ca3af, transparent);
-        right: 10%;
-        bottom: 10%;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
+        z-index: 5;
     }
 
     .hero-content {
-        max-width: 80rem;
-        margin: 0 auto;
-        position: relative;
-        z-index: 10;
-        width: 100%;
-    }
-
-    .hero h1 {
-        font-size: clamp(3.5rem, 14vw, 7rem);
-        font-weight: 900;
-        line-height: 1.05;
-        letter-spacing: -0.03em;
-        margin-bottom: 3rem;
-        animation: slideUp 0.8s ease-out;
-        text-align: center;
-        width: 100%;
-    }
-
-    .hero-content {
-        max-width: 900px;
+        max-width: 1100px;
         margin: 0 auto;
         position: relative;
         z-index: 10;
@@ -175,46 +136,106 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 0 1rem;
+        padding: 0 2rem;
     }
 
-    .hero-image-container {
-        width: 100%;
-        max-width: 700px;
-        height: 450px;
-        margin: 3rem 0 3rem 0;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
-        animation: slideUp 0.8s ease-out 0.1s both;
+    .hero h1 {
+        font-size: clamp(3.5rem, 15vw, 8rem);
+        font-weight: 900;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        margin-bottom: 2rem;
+        color: white;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        animation: slideUp 0.8s ease-out;
     }
 
-    .hero-image-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .hero h1 span {
+        display: inline-block;
+        animation: slideInLeft 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, geometricFade 1.2s ease-out forwards;
+        color: white;
+    }
+
+    .hero h1 span.slide-out {
+        animation: slideOutRight 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, geometricFadeReverse 1.2s ease-out forwards !important;
+    }
+
+    .hero h1 span:nth-child(1) { animation-delay: 0s, 0s; }
+    .hero h1 span:nth-child(2) { animation-delay: 0.05s, 0.05s; }
+    .hero h1 span:nth-child(3) { animation-delay: 0.1s, 0.1s; }
+    .hero h1 span:nth-child(4) { animation-delay: 0.15s, 0.15s; }
+    .hero h1 span:nth-child(5) { animation-delay: 0.2s, 0.2s; }
+    .hero h1 span:nth-child(6) { animation-delay: 0.25s, 0.25s; }
+    .hero h1 span:nth-child(7) { animation-delay: 0.3s, 0.3s; }
+    .hero h1 span:nth-child(8) { animation-delay: 0.35s, 0.35s; }
+    .hero h1 span:nth-child(9) { animation-delay: 0.4s, 0.4s; }
+    .hero h1 span:nth-child(10) { animation-delay: 0.45s, 0.45s; }
+    .hero h1 span:nth-child(11) { animation-delay: 0.5s, 0.5s; }
+    .hero h1 span:nth-child(12) { animation-delay: 0.55s, 0.55s; }
+    .hero h1 span:nth-child(13) { animation-delay: 0.6s, 0.6s; }
+    .hero h1 span:nth-child(14) { animation-delay: 0.65s, 0.65s; }
+    .hero h1 span:nth-child(15) { animation-delay: 0.7s, 0.7s; }
+    .hero h1 span:nth-child(16) { animation-delay: 0.75s, 0.75s; }
+    .hero h1 span:nth-child(17) { animation-delay: 0.8s, 0.8s; }
+    .hero h1 span:nth-child(18) { animation-delay: 0.85s, 0.85s; }
+    .hero h1 span:nth-child(19) { animation-delay: 0.9s, 0.9s; }
+    .hero h1 span:nth-child(20) { animation-delay: 0.95s, 0.95s; }
+
+    .hero h1 span.slide-out:nth-child(1) { animation-delay: 0.95s, 0.95s !important; }
+    .hero h1 span.slide-out:nth-child(2) { animation-delay: 0.9s, 0.9s !important; }
+    .hero h1 span.slide-out:nth-child(3) { animation-delay: 0.85s, 0.85s !important; }
+    .hero h1 span.slide-out:nth-child(4) { animation-delay: 0.8s, 0.8s !important; }
+    .hero h1 span.slide-out:nth-child(5) { animation-delay: 0.75s, 0.75s !important; }
+    .hero h1 span.slide-out:nth-child(6) { animation-delay: 0.7s, 0.7s !important; }
+    .hero h1 span.slide-out:nth-child(7) { animation-delay: 0.65s, 0.65s !important; }
+    .hero h1 span.slide-out:nth-child(8) { animation-delay: 0.6s, 0.6s !important; }
+    .hero h1 span.slide-out:nth-child(9) { animation-delay: 0.55s, 0.55s !important; }
+    .hero h1 span.slide-out:nth-child(10) { animation-delay: 0.5s, 0.5s !important; }
+    .hero h1 span.slide-out:nth-child(11) { animation-delay: 0.45s, 0.45s !important; }
+    .hero h1 span.slide-out:nth-child(12) { animation-delay: 0.4s, 0.4s !important; }
+    .hero h1 span.slide-out:nth-child(13) { animation-delay: 0.35s, 0.35s !important; }
+    .hero h1 span.slide-out:nth-child(14) { animation-delay: 0.3s, 0.3s !important; }
+    .hero h1 span.slide-out:nth-child(15) { animation-delay: 0.25s, 0.25s !important; }
+    .hero h1 span.slide-out:nth-child(16) { animation-delay: 0.2s, 0.2s !important; }
+    .hero h1 span.slide-out:nth-child(17) { animation-delay: 0.15s, 0.15s !important; }
+    .hero h1 span.slide-out:nth-child(18) { animation-delay: 0.1s, 0.1s !important; }
+    .hero h1 span.slide-out:nth-child(19) { animation-delay: 0.05s, 0.05s !important; }
+    .hero h1 span.slide-out:nth-child(20) { animation-delay: 0s, 0s !important; }
+
+    .hero-subtitle {
+        color: white;
+        display: block;
     }
 
     .hero-description {
-        font-size: 1.125rem;
-        color: #57534e;
+        font-size: 1.25rem;
+        color: #e5e7eb;
         line-height: 1.8;
-        max-width: 500px;
-        margin-bottom: 2rem;
+        max-width: 600px;
+        margin: 2rem 0;
         animation: slideUp 0.8s ease-out 0.2s both;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
 
     .hero-buttons {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
         margin-top: 2rem;
         animation: slideUp 0.8s ease-out 0.3s both;
         align-items: center;
+        width: 100%;
+    }
+
+    @media (min-width: 640px) {
+        .hero-buttons {
+            flex-direction: row;
+            justify-content: center;
+        }
     }
 
     .btn {
-        padding: 1rem 2rem;
+        padding: 1rem 2.5rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.05em;
@@ -226,27 +247,30 @@
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
+        border-radius: 4px;
     }
 
     .btn-primary {
-        background-color: black;
-        color: white;
+        background-color: white;
+        color: black;
     }
 
     .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+        background-color: #f0f0f0;
     }
 
     .btn-secondary {
-        background-color: white;
-        color: black;
-        border: 2px solid black;
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
     }
 
     .btn-secondary:hover {
-        background-color: black;
-        color: white;
+        background-color: white;
+        color: black;
+        transform: translateY(-3px);
     }
 
     .scroll-indicator {
@@ -256,15 +280,112 @@
         transform: translateX(-50%);
         animation: bounce 2s infinite;
         font-size: 1.5rem;
-        color: #78716c;
+        color: white;
+        opacity: 0.7;
     }
 
-    .hero-subtitle {
-        background: linear-gradient(to right, #374151, #6b7280);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        display: block;
+    /* Animations */
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideInLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-80px) rotateY(80deg);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0) rotateY(0deg);
+        }
+    }
+
+    @keyframes slideOutRight {
+        0% {
+            opacity: 1;
+            transform: translateX(0) rotateY(0deg);
+        }
+        100% {
+            opacity: 0;
+            transform: translateX(80px) rotateY(-80deg);
+        }
+    }
+
+    @keyframes geometricFade {
+        0% {
+            opacity: 0;
+            clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+        }
+        20% {
+            opacity: 0.2;
+            clip-path: polygon(0% 0%, 20% 0%, 20% 100%, 0% 100%);
+        }
+        40% {
+            opacity: 0.4;
+            clip-path: polygon(0% 0%, 40% 0%, 40% 100%, 0% 100%);
+        }
+        60% {
+            opacity: 0.6;
+            clip-path: polygon(0% 0%, 60% 0%, 60% 100%, 0% 100%);
+        }
+        80% {
+            opacity: 0.8;
+            clip-path: polygon(0% 0%, 80% 0%, 80% 100%, 0% 100%);
+        }
+        100% {
+            opacity: 1;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+    }
+
+    @keyframes geometricFadeReverse {
+        0% {
+            opacity: 1;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+        20% {
+            opacity: 0.8;
+            clip-path: polygon(0% 0%, 80% 0%, 80% 100%, 0% 100%);
+        }
+        40% {
+            opacity: 0.6;
+            clip-path: polygon(0% 0%, 60% 0%, 60% 100%, 0% 100%);
+        }
+        60% {
+            opacity: 0.4;
+            clip-path: polygon(0% 0%, 40% 0%, 40% 100%, 0% 100%);
+        }
+        80% {
+            opacity: 0.2;
+            clip-path: polygon(0% 0%, 20% 0%, 20% 100%, 0% 100%);
+        }
+        100% {
+            opacity: 0;
+            clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
     }
 
     /* Projects Section */
@@ -782,161 +903,6 @@
         width: 100%;
     }
 
-    /* Animations */
-    @keyframes slideUp {
-        from {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes bounce {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-    }
-
-    @keyframes slideInLeft {
-        0% {
-            opacity: 0;
-            transform: translateX(-80px) rotateY(80deg);
-        }
-        100% {
-            opacity: 1;
-            transform: translateX(0) rotateY(0deg);
-        }
-    }
-
-    @keyframes slideOutRight {
-        0% {
-            opacity: 1;
-            transform: translateX(0) rotateY(0deg);
-        }
-        100% {
-            opacity: 0;
-            transform: translateX(80px) rotateY(-80deg);
-        }
-    }
-
-    @keyframes geometricFade {
-        0% {
-            opacity: 0;
-            clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
-        }
-        20% {
-            opacity: 0.2;
-            clip-path: polygon(0% 0%, 20% 0%, 20% 100%, 0% 100%);
-        }
-        40% {
-            opacity: 0.4;
-            clip-path: polygon(0% 0%, 40% 0%, 40% 100%, 0% 100%);
-        }
-        60% {
-            opacity: 0.6;
-            clip-path: polygon(0% 0%, 60% 0%, 60% 100%, 0% 100%);
-        }
-        80% {
-            opacity: 0.8;
-            clip-path: polygon(0% 0%, 80% 0%, 80% 100%, 0% 100%);
-        }
-        100% {
-            opacity: 1;
-            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-        }
-    }
-
-    @keyframes geometricFadeReverse {
-        0% {
-            opacity: 1;
-            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-        }
-        20% {
-            opacity: 0.8;
-            clip-path: polygon(0% 0%, 80% 0%, 80% 100%, 0% 100%);
-        }
-        40% {
-            opacity: 0.6;
-            clip-path: polygon(0% 0%, 60% 0%, 60% 100%, 0% 100%);
-        }
-        60% {
-            opacity: 0.4;
-            clip-path: polygon(0% 0%, 40% 0%, 40% 100%, 0% 100%);
-        }
-        80% {
-            opacity: 0.2;
-            clip-path: polygon(0% 0%, 20% 0%, 20% 100%, 0% 100%);
-        }
-        100% {
-            opacity: 0;
-            clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
-        }
-    }
-
-    .hero h1 span {
-        display: inline-block;
-        animation: slideInLeft 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, geometricFade 1.2s ease-out forwards;
-    }
-
-    .hero h1 span.slide-out {
-        animation: slideOutRight 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, geometricFadeReverse 1.2s ease-out forwards !important;
-    }
-
-    .hero h1 span:nth-child(1) { animation-delay: 0s, 0s; }
-    .hero h1 span:nth-child(2) { animation-delay: 0.05s, 0.05s; }
-    .hero h1 span:nth-child(3) { animation-delay: 0.1s, 0.1s; }
-    .hero h1 span:nth-child(4) { animation-delay: 0.15s, 0.15s; }
-    .hero h1 span:nth-child(5) { animation-delay: 0.2s, 0.2s; }
-    .hero h1 span:nth-child(6) { animation-delay: 0.25s, 0.25s; }
-    .hero h1 span:nth-child(7) { animation-delay: 0.3s, 0.3s; }
-    .hero h1 span:nth-child(8) { animation-delay: 0.35s, 0.35s; }
-    .hero h1 span:nth-child(9) { animation-delay: 0.4s, 0.4s; }
-    .hero h1 span:nth-child(10) { animation-delay: 0.45s, 0.45s; }
-    .hero h1 span:nth-child(11) { animation-delay: 0.5s, 0.5s; }
-    .hero h1 span:nth-child(12) { animation-delay: 0.55s, 0.55s; }
-    .hero h1 span:nth-child(13) { animation-delay: 0.6s, 0.6s; }
-    .hero h1 span:nth-child(14) { animation-delay: 0.65s, 0.65s; }
-    .hero h1 span:nth-child(15) { animation-delay: 0.7s, 0.7s; }
-    .hero h1 span:nth-child(16) { animation-delay: 0.75s, 0.75s; }
-    .hero h1 span:nth-child(17) { animation-delay: 0.8s, 0.8s; }
-    .hero h1 span:nth-child(18) { animation-delay: 0.85s, 0.85s; }
-    .hero h1 span:nth-child(19) { animation-delay: 0.9s, 0.9s; }
-    .hero h1 span:nth-child(20) { animation-delay: 0.95s, 0.95s; }
-
-    .hero h1 span.slide-out:nth-child(1) { animation-delay: 0.95s, 0.95s !important; }
-    .hero h1 span.slide-out:nth-child(2) { animation-delay: 0.9s, 0.9s !important; }
-    .hero h1 span.slide-out:nth-child(3) { animation-delay: 0.85s, 0.85s !important; }
-    .hero h1 span.slide-out:nth-child(4) { animation-delay: 0.8s, 0.8s !important; }
-    .hero h1 span.slide-out:nth-child(5) { animation-delay: 0.75s, 0.75s !important; }
-    .hero h1 span.slide-out:nth-child(6) { animation-delay: 0.7s, 0.7s !important; }
-    .hero h1 span.slide-out:nth-child(7) { animation-delay: 0.65s, 0.65s !important; }
-    .hero h1 span.slide-out:nth-child(8) { animation-delay: 0.6s, 0.6s !important; }
-    .hero h1 span.slide-out:nth-child(9) { animation-delay: 0.55s, 0.55s !important; }
-    .hero h1 span.slide-out:nth-child(10) { animation-delay: 0.5s, 0.5s !important; }
-    .hero h1 span.slide-out:nth-child(11) { animation-delay: 0.45s, 0.45s !important; }
-    .hero h1 span.slide-out:nth-child(12) { animation-delay: 0.4s, 0.4s !important; }
-    .hero h1 span.slide-out:nth-child(13) { animation-delay: 0.35s, 0.35s !important; }
-    .hero h1 span.slide-out:nth-child(14) { animation-delay: 0.3s, 0.3s !important; }
-    .hero h1 span.slide-out:nth-child(15) { animation-delay: 0.25s, 0.25s !important; }
-    .hero h1 span.slide-out:nth-child(16) { animation-delay: 0.2s, 0.2s !important; }
-    .hero h1 span.slide-out:nth-child(17) { animation-delay: 0.15s, 0.15s !important; }
-    .hero h1 span.slide-out:nth-child(18) { animation-delay: 0.1s, 0.1s !important; }
-    .hero h1 span.slide-out:nth-child(19) { animation-delay: 0.05s, 0.05s !important; }
-    .hero h1 span.slide-out:nth-child(20) { animation-delay: 0s, 0s !important; }
-
     .hidden {
         display: none;
     }
@@ -961,28 +927,17 @@
 ```
 <!-- Hero Section -->
 <section class="hero">
-    <div class="hero-bg">
-        <div class="hero-blob hero-blob-1"></div>
-        <div class="hero-blob hero-blob-2"></div>
-    </div>
     <div class="hero-content">
         <h1>
             <span>A</span><span>R</span><span>Q</span><span>U</span><span>I</span><span>T</span><span>E</span><span>C</span><span>T</span><span>U</span><span>R</span><span>A</span>
             <br>
             <span class="hero-subtitle"><span>D</span><span>E</span></span> <span class="hero-subtitle"><span>I</span><span>M</span><span>P</span><span>A</span><span>C</span><span>T</span><span>O</span></span>
         </h1>
-
-        <div class="hero-image-container">
-            <img src="https://images.pexels.com/photos/3645517/pexels-photo-3645517.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Arquitectura moderna">
-        </div>
-
         <p class="hero-description">Proyectos que dialogan con el contexto. Diseño honesto que respeta la materia y el espacio.</p>
-        
         <div class="hero-buttons">
             <button class="btn btn-primary" onclick="document.getElementById('proyectos').scrollIntoView({ behavior: 'smooth' })">Ver Proyectos</button>
             <button class="btn btn-secondary" onclick="document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' })">Agendar Reunión</button>
         </div>
-        
         <div class="scroll-indicator">↓</div>
     </div>
 </section>
@@ -1249,32 +1204,24 @@
         const heroHeight = heroRect.height;
         const windowHeight = window.innerHeight;
         
-        // Calcular posición del scroll relativa al hero (0 a 1)
-        // 0 = hero en top de la pantalla
-        // 1 = hero fuera de la pantalla hacia arriba
         let scrollProgress = (windowHeight - heroTop) / (windowHeight + heroHeight);
         scrollProgress = Math.max(0, Math.min(1, scrollProgress));
         
         titleSpans.forEach((span, index) => {
-            // Calcular delay individual para cada letra
             const letterDelay = (index / numSpans) * 0.6;
-            
-            // Calcular si esta letra debe estar visible o no
             const letterProgress = Math.max(0, scrollProgress - letterDelay);
             
-            // Aplicar transformaciones
             const opacity = Math.min(1, letterProgress * 2);
             const translateX = (1 - opacity) * -100;
             const rotateY = (1 - opacity) * 90;
             
-            // Calcular clip-path para el efecto geométrico
             const clipPercent = Math.max(0, opacity * 100);
             const clipPath = `polygon(0% 0%, ${clipPercent}% 0%, ${clipPercent}% 100%, 0% 100%)`;
             
             span.style.opacity = opacity;
             span.style.transform = `translateX(${translateX}px) rotateY(${rotateY}deg)`;
             span.style.clipPath = clipPath;
-            span.style.transition = 'none'; // Sin transición, solo scroll
+            span.style.transition = 'none';
         });
     }, { passive: true });
 </script>
